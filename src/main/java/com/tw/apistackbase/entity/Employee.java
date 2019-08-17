@@ -1,9 +1,18 @@
-package com.tw.apistackbase.core;
+package com.tw.apistackbase.entity;
 
-public class Company {
+import javax.persistence.*;
+
+@Entity
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
     private String name;
+
+    @Column
+    private int age;
 
     public Long getId() {
         return id;
@@ -21,10 +30,11 @@ public class Company {
         this.name = name;
     }
 
-    public Company() {
+    public int getAge() {
+        return age;
     }
 
-    public Company(String name) {
-        this.name = name;
+    public void setAge(int age) {
+        this.age = age;
     }
 }
